@@ -1,3 +1,5 @@
+import jupiter_dash import Jupyterdash
+from dash import dcc, html  
 # -*- coding: utf-8 -*-
 """Untitled21.ipynb
 
@@ -63,4 +65,54 @@ fig_violin = px.violin(titanic_df,
 
 fig_violin.update_layout(yaxis_title='Jumlah')
 fig_violin.show()
+
+import dash
+
+from dash import dcc, html
+
+#modul analisis lain
+
+import pandas as pd
+
+import plotly.express as px
+
+
+
+
+
+# Inisiasi aplikasi
+
+app = dash.Dash(__name__)
+
+
+
+# Definisikan layout 
+
+app.layout = html.Div(children=[
+
+    html.H1(children=‘Visualisasi Data’),
+
+
+
+    # Jika hendak ada grafik
+
+    dcc.Graph(
+
+        id=‘nama-id',
+
+        figure=nama_grafik_dalam_variabel
+
+    ),
+
+
+
+   ])
+
+
+
+# Jalankan server
+
+if __name__ == '__main__':
+
+    app.run_server(debug=True)
 
